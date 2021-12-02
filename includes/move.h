@@ -10,16 +10,38 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+typedef enum {
+    true = 1,
+    false = 0
+} bool; 
+
+typedef struct {
+    int idplayer;
+    int y, x;           // Original location
+    int ty, tx;         // Choosed Location
+    int pid;            // Original Location piece ID
+    int ptype;          // Original Location piece type
+    int tpid;           // Choosed Location  piece ID
+    bool tenemy;        // Choosed Location is enemy or not
+} Move;
+
+
 int MakeMove(int, Board *);
 int GoodInput(char *);
 int len_str(char *);
-int LegalMove(int , char *, Board);
-int *move_to_array(char *);
+int LegalMove(Move, Board);
 
-int MoveKing(int, int *, Board);
-int MoveQueen(int, int *, Board);
-int MoveRook(int, int *, Board);
-int MoveBishop(int, int *move, Board);
-int MoveKnight(int, int *, Board);
-int MovePawn(int, int *, Board);
+Move CreateMoveStruct(int, char *, Board);
+
+int MoveKing(Move, Board);
+int MoveQueen(Move, Board);
+int MoveRook(Move, Board);
+int MoveBishop(Move, Board);
+int MoveKnight(Move, Board);
+int MovePawn(Move, Board);
+
+
+int difference(int, int);
+int sign(int);
 #endif

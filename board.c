@@ -1,7 +1,7 @@
 #include "includes/board.h"
 
 void PrintfBoard(Board board){
-    system("clear");    // if windows replace clear with cls
+    //system("clear");    // if windows replace clear with cls
     setlocale(LC_CTYPE, "");
     printf("    "); for(int i=0; i<8; i++)
         printf("%d    ", i);
@@ -54,4 +54,14 @@ int GetPieceID(Pieces p){
 
 int GetPieceTypeByPID(int n){
     return (n>6) ? n-6 : n;
+}
+
+int IsEnemyPiece(int idplayer, int pid){
+
+    if(pid==0)
+        return 1;
+    if(idplayer==0)
+        return (pid<7) ? 0 : 1;
+    else
+        return (pid>6) ? 0 : 1;
 }

@@ -34,4 +34,5 @@ void PrintfBoard(Board board);
 Board InitBoard();
 int GetPieceID(Pieces);
 int GetPieceTypeByPID(int);
+int IsEnemyPiece(int, int);
 #endif
