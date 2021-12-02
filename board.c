@@ -1,7 +1,7 @@
 #include "includes/board.h"
 
 void PrintfBoard(Board board){
-    //system("clear");    // if windows replace clear with cls
+    system("clear");    // if windows replace clear with cls
     setlocale(LC_CTYPE, "");
     printf("    "); for(int i=0; i<8; i++)
         printf("%d    ", i);
