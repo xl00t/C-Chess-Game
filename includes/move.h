@@ -31,6 +31,7 @@ int MakeMove(int, Board *);
 int GoodInput(char *);
 int len_str(char *);
 int LegalMove(Move, Board);
+int IsCheck(int, Board);
 
 Move CreateMoveStruct(int, char *, Board);
 
@@ -40,6 +41,7 @@ int MoveRook(Move, Board);
 int MoveBishop(Move, Board);
 int MoveKnight(Move, Board);
 int MovePawn(Move, Board);
+
 
 
 int difference(int, int);

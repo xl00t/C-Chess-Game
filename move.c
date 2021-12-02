@@ -38,9 +38,15 @@ int MakeMove(int idplayer, Board *board){
     if(!LegalMove(move, *board))
         return 0;
 
+    Board tmp = *board;
+    tmp.piece[move.ty][move.tx].type = tmp.piece[move.y][move.x].type;
+    tmp.piece[move.y][move.x].type = 0x00;
+
+    if(IsCheck(idplayer, tmp))
+        return 0;
+    
     board->piece[move.ty][move.tx].type = board->piece[move.y][move.x].type;
     board->piece[move.y][move.x].type = 0x00;
-    
 
     return 1;
 }
@@ -80,7 +86,17 @@ int LegalMove(Move move, Board board){
         default:
             return 0;
     }
-    return 1;
+}
+
+int IsCheck(int idplayer, Board board){
+    Coord KingPos;
+    if (idplayer==0)
+        KingPos = FindPiece(1, board);
+    else if(idplayer==1)
+        KingPos = FindPiece(7, board);
+
+
+    return 0;
 }
 
 int MoveKing(Move move, Board board){

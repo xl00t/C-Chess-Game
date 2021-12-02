@@ -65,3 +65,17 @@ int IsEnemyPiece(int idplayer, int pid){
     else
         return (pid>6) ? 0 : 1;
 }
+
+Coord FindPiece(int pid, Board board){
+    Coord xy;
+    for (int y = 0; y < 8; y++){
+        for (int x = 0; x < 8; x++){
+            if (board.piece[y][x].type ==  pid + 0x2653){
+                xy.x = x; xy.y = y;
+                return xy;
+            }
+        }
+    }
+    xy.x = xy.y = -1;
+    return xy;
+}

@@ -23,6 +23,10 @@
 */
 
 typedef struct {
+    int y, x;
+} Coord;
+
+typedef struct {
     wchar_t type;
 } Pieces;
 
@@ -35,4 +39,5 @@ Board InitBoard();
 int GetPieceID(Pieces);
 int GetPieceTypeByPID(int);
 int IsEnemyPiece(int, int);
+Coord FindPiece(int, Board);
 #endif
