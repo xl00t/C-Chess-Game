@@ -7,7 +7,7 @@
 #include <locale.h>
 
 
-/*                                    - 0x2653 	
+/*                                      - 0x2653 	
     Roi blanc 	        ♔ 	0x2654  	    -> 1
     Dame blanche 	♕ 	0x2655  	    -> 2
     Tour blanche 	♖ 	0x2656   	    -> 3
